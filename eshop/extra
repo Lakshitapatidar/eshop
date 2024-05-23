@@ -1,0 +1,293 @@
+//  function showcard(mainDiv, user) {
+//   const cardcontainer = document.getElementById("card-container");
+//   cardcontainer.innerHTML = " ";
+//   cardcontainer.setAttribute("style", "position:fixed; justify-content:space-between; display:flex");
+
+//   window.alert("show card");
+
+//   const cardDetails = JSON.parse(localStorage.getItem("cart-list")) || [];
+
+//   const tablediv = document.createElement("div");
+//   tablediv.setAttribute("style", "width:50%; height:100%");
+
+//   cardcontainer.appendChild(tablediv);
+
+//   const table = document.createElement("table");
+//   table.setAttribute("style", "width: 100%; margin-top:120px;");
+//   const headerRow = document.createElement("tr");
+//   headerRow.setAttribute("style", "background-color:goldenrod");
+//   tablediv.appendChild(table);
+
+//   const headers = ["Product ID", "Name", "Price", "Quantity", "Total Price", "Actions"];
+//   headers.forEach(headerText => {
+//     const header = document.createElement("th");
+//     header.textContent = headerText;
+//     headerRow.appendChild(header);
+//   });
+
+//   table.appendChild(headerRow);
+
+//   let plist = [];
+//   cardDetails.forEach((card) => {
+//     if (card.email === user.email) {
+//       plist = card.cartItems;
+//     }
+//   });
+
+//   let counter = 0;
+//   let totalPrice = 0;
+
+//   plist.forEach((item) => {
+//     counter++;
+//     totalPrice += item.price * (item.quantity || 1);
+
+//     const row = document.createElement("tr");
+
+//     const pid = document.createElement("td");
+//     pid.textContent = item.id;
+//     row.appendChild(pid);
+
+//     const pname = document.createElement("td");
+//     pname.textContent = item.title;
+//     row.appendChild(pname);
+
+//     const pricee = document.createElement("td");
+//     pricee.textContent = item.price;
+//     row.appendChild(pricee);
+
+//     const quantityCell = document.createElement("td");
+//     const quantityInput = document.createElement("input");
+//     quantityInput.setAttribute("type", "number");
+//     quantityInput.setAttribute("style", "width:40px");
+//     quantityInput.setAttribute("min", "1");
+//     quantityInput.setAttribute("value", item.quantity || 1);
+//     quantityInput.addEventListener("input", function () {
+//       item.quantity = parseInt(quantityInput.value) || 1;
+//       totalPriceCell.textContent = item.price * item.quantity;
+//       updateTotals();
+//       updateLocalStorage(cardDetails);
+//     });
+//     quantityCell.appendChild(quantityInput);
+//     row.appendChild(quantityCell);
+
+//     const totalPriceCell = document.createElement("td");
+//     totalPriceCell.textContent = item.price * (item.quantity || 1);
+//     row.appendChild(totalPriceCell);
+
+//     const actionsCell = document.createElement("td");
+//     const deleteButton = document.createElement("button");
+//     deleteButton.textContent = "Delete";
+//     deleteButton.addEventListener("click", function () {
+//       plist = plist.filter(p => p.id !== item.id);
+//       updateTotals();
+//       updateLocalStorage(cardDetails);
+//       row.remove();
+//     });
+//     actionsCell.appendChild(deleteButton);
+//     row.appendChild(actionsCell);
+
+//     table.appendChild(row);
+//   });
+
+//   tablediv.appendChild(table);
+
+//   const sidediv = document.createElement("div");
+//   sidediv.setAttribute("style", "width: 30%; height: 100%; margin-top: 120px; margin-left: 20px;");
+
+//   const npdiv = document.createElement("div");
+//   const nplabeldiv = document.createElement("h4");
+//   nplabeldiv.textContent = "No. of Products: ";
+//   const noOfProductsValue = document.createElement("span");
+//   noOfProductsValue.textContent = counter;
+//   npdiv.appendChild(nplabeldiv);
+//   nplabeldiv.appendChild(noOfProductsValue);
+
+//   const totalPriceDiv = document.createElement("div");
+//   const totalPriceLabel = document.createElement("h4");
+//   totalPriceLabel.textContent = "Total Price: ";
+//   const totalPriceValue = document.createElement("span");
+//   totalPriceValue.textContent = totalPrice;
+//   totalPriceDiv.appendChild(totalPriceLabel);
+//   totalPriceLabel.appendChild(totalPriceValue);
+
+//   const checkoutButton = document.createElement("button");
+//   checkoutButton.textContent = "Checkout";
+//   checkoutButton.setAttribute("style", "height: 40px; width: 100px; margin-top: 20px;");
+//   checkoutButton.addEventListener("click", function () {
+//     window.alert("Proceed to checkout");
+//   });
+
+//   sidediv.appendChild(npdiv);
+//   sidediv.appendChild(totalPriceDiv);
+//   sidediv.appendChild(checkoutButton);
+
+//   cardcontainer.appendChild(sidediv);
+
+//   function updateTotals() {
+//     counter = plist.length;
+//     totalPrice = plist.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+//     noOfProductsValue.textContent = counter;
+//     totalPriceValue.textContent = totalPrice;
+//   }
+
+//   function updateLocalStorage(cardDetails) {
+//     localStorage.setItem("cart-list", JSON.stringify(cardDetails));
+//   }
+// }
+
+
+
+// -----------------------------------------------------------------------------------------------
+
+
+
+//  function showcard(mainDiv, user) {
+ 
+// const cardcontainer=document.getElementById("card-container")
+// cardcontainer.innerHTML=" "
+// cardcontainer.setAttribute("style","position:fixed ;justify-content-between;display-flex")
+//   window.alert("show card");
+
+//   // const backbtn=document.createElement("button ")
+//   // backbtn.setAttribute("style","height: 40px; width: 70px; border:none; outline:none; align-item-center ;margin-left:20px;margin-top:10px;border-radius:10px ;background-color:red");
+//   // backbtn.textContent="Back"
+
+
+
+//   const cardDetails = JSON.parse(localStorage.getItem("cart-list")) || [];
+  
+// // console.log(cardDetails)
+
+
+
+
+
+// const tablediv=document.createElement("div")
+// tablediv.setAttribute("style","width:50%,height:100%")
+
+// cardcontainer.appendChild(tablediv)
+
+
+//   const table = document.createElement("table");
+//   table.setAttribute("style", "width: 50%; margin-top:120px; position:fixed ");
+//   const headerRow = document.createElement("tr");
+// headerRow.setAttribute("style","background-color:goldenrod")
+//   tablediv.appendChild(table)
+
+//   const headers = ["Product ID", "Name", "Price", "Quantity", "Total Price", "Actions"];
+//   headers.forEach(headerText => {
+//       const header = document.createElement("th");
+    
+//       header.textContent = headerText;
+//       headerRow.appendChild(header);
+//   });
+
+//   table.appendChild(headerRow);
+//   let plist;
+//   let userCardList = cardDetails.filter((card) => {
+//     if(card.email === user.email){
+//       // console.log(card.cartItems)
+//       // return card.userCardList;
+//       plist=card.cartItems
+//   } });
+//             // console.log(userCardList)
+// // const p=userCardList.cartItems;
+// // console.log(p)
+// let counter=0;
+// let price=0;
+//   // userCardList.forEach((item, index) =>
+//     for(let item of  plist) {
+//     // console.log(userCardList)
+//     counter++;
+//       const row = document.createElement("tr");
+
+//       const pid = document.createElement("td");
+//       pid.textContent = item.id;
+//       row.appendChild(pid);
+
+//       const pname = document.createElement("td");
+//       pname.textContent = item.title;
+//       row.appendChild(pname);
+
+//       const pricee = document.createElement("td");
+//       pricee.innerHTML= item.price;
+//       console.log(item.price)
+//       row.appendChild(pricee);
+
+//       const quantityCell = document.createElement("td");
+//       const quantityInput = document.createElement("input");
+//       quantityInput.setAttribute("type", "number");
+//       quantityInput.setAttribute("style","width:40px");
+//       quantityInput.setAttribute("min", "1");
+//       quantityInput.setAttribute("value", item.quantity || 1);
+//       quantityInput.addEventListener("input", function () {
+//           item.quantity = parseInt(quantityInput.value) || 1;
+//           totalPriceCell.textContent = item.price * item.quantity;
+//           updateLocalStorage(cardList);
+//       });
+//       quantityCell.appendChild(quantityInput);
+//       row.appendChild(quantityCell);
+
+//       const totalPriceCell = document.createElement("td");
+//       if(!item.quantity){
+//         totalPriceCell.textContent = item.price * 1;
+//       }
+//       else{
+//         totalPriceCell.textContent = item.price * item.quantity;
+//       }
+      
+//       row.appendChild(totalPriceCell);
+
+//       const actionsCell = document.createElement("td");
+//       const deleteButton = document.createElement("button");
+//       deleteButton.textContent = "Delete";
+//       deleteButton.addEventListener("click", function () {
+//         window.alert("delete")
+//         console.log(item.id)
+//        if (cardDetails.email== user.email){
+        
+//        }
+       
+     
+//       });
+//       actionsCell.appendChild(deleteButton);
+//       row.appendChild(actionsCell);
+
+//       table.appendChild(row);
+//   }
+
+//   tablediv.appendChild(table);
+
+
+//   let  blockq=document.createElement("div")
+//   blockq.setAttribute("style","height:40px;width:50%; margin-top:50% ")
+//   // blockq.setAttribute("style","margin-top:100px")
+//   // blockq.setAttribute("style","justify-content-between;display-flex")
+
+//   cardcontainer.appendChild(blockq)
+
+// const no0fproduct=document.createElement("div")
+// no0fproduct.setAttribute("style","height:10px;width:40px")
+// const h4=document.createElement("h4")
+// h4.innerHTML="NoOfProducts : "
+
+// blockq.appendchild(no0fproduct)
+
+
+// }
+
+// function updateLocalStorage(cardDetails) {
+//   localStorage.setItem("card-list", JSON.stringify(cardDetails));
+// }
+
+
+
+
+
+
+
+
+
+
+
+
